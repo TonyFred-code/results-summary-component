@@ -9,7 +9,7 @@ body {
 }
 
 @theme {
-  --font-hanken-grotesk: "Hanken Grotesk";
+  --font-hanken-grotesk: "Hanken Grotesk", sans-serif;
 
   /* NEUTRAL COLORS */
   --color-white: hsl(0, 0%, 100%);
@@ -31,7 +31,7 @@ body {
 }
 
 @font-face {
-  font-family: "Hanken Grotesk", sans-serif;
+  font-family: "Hanken Grotesk";
   font-weight: 500 700 800;
   font-style: normal;
   font-display: swap;
