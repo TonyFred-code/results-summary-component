@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/TonyFred-code/results-summary-component/issues"
   },
-  "author": "Alfred  O. Faith (Tony Fred)",
+  "author": "Alfred O. Faith (Tony Fred)",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
