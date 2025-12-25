@@ -11,7 +11,7 @@ export default function useResults() {
       .then((data) => setResults(data))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  });
+  }, []);
 
   return { loading, error, results };
 }

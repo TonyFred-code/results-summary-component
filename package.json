@@ -1,8 +1,17 @@
 {
   "name": "results-summary-component-main",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TonyFred-code/results-summary-component"
+  },
+  "bugs": {
+    "url": "https://github.com/TonyFred-code/results-summary-component/issues"
+  },
+  "author": "Alfred O. Faith (Tony Fred)",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

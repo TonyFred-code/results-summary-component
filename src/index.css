@@ -23,7 +23,7 @@ body {
 
   /* PRIMARY */
   --color-light-red: hsl(0, 100%, 67%);
-  --color-orange-yellow: hsl(39, 100%, 56%);
+  --color-orangey-yellow: hsl(39, 100%, 56%);
   --color-green-teal: hsl(166, 100%, 37%);
   --color-cobalt-blue: hsl(234, 85%, 45%);
 }
