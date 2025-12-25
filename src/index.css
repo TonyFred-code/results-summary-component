@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+html,
+body {
+  font-size: 18px;
+  font-family: var(--font-hanken-grotesk);
+}
+
+@theme {
+  --font-hanken-grotesk: "Hanken Grotesk", sans-serif;
+
+  /* NEUTRAL COLORS */
+  --color-white: hsl(0, 0%, 100%);
+  --color-pale-blue: hsl(221, 100%, 96%);
+  --color-light-lavender: hsl(241, 100%, 89%);
+  --color-dark-gray-blue: hsl(224, 30%, 27%);
+
+  /* GRADIENTS */
+  --color-slate-blue: hsl(252, 100%, 67%);
+  --color-royal-blue: hsl(241, 81%, 54%);
+  --color-violet-blue: hsla(256, 72%, 46%, 1);
+  --color-persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* PRIMARY */
+  --color-light-red: hsl(0, 100%, 67%);
+  --color-orange-yellow: hsl(39, 100%, 56%);
+  --color-green-teal: hsl(166, 100%, 37%);
+  --color-cobalt-blue: hsl(234, 85%, 45%);
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-weight: 500 700 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+
+@layer utilities {
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(250%);
+    }
+  }
+
+  .animate-loading-bar {
+    animation: loading 0.6s ease infinite;
+  }
+}
