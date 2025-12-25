@@ -10,7 +10,7 @@ function randomInteger(min, max) {
   return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
 }
 export default async function fetchResults() {
-  const LOADER_DURATION = randomInteger(400, 700);
+  const LOADER_DURATION = randomInteger(850, 1500);
 
   try {
     const response = await fetch("/data.json");
