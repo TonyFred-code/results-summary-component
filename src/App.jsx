@@ -13,6 +13,25 @@ export default function App() {
         )
       : 0;
 
+  const themeClassesByCategory = {
+    reaction: {
+      bg: "bg-light-red/5",
+      text: "text-light-red",
+    },
+    memory: {
+      bg: "bg-orangey-yellow/5",
+      text: "text-orangey-yellow",
+    },
+    verbal: {
+      bg: "bg-green-teal/5",
+      text: "text-green-teal",
+    },
+    visual: {
+      bg: "bg-cobalt-blue/5",
+      text: "text-cobalt-blue",
+    },
+  };
+
   if (error) return <div>A very very unexpected error occurred</div>;
 
   return (
@@ -57,24 +76,7 @@ export default function App() {
               const { category, score, icon } = result;
 
               const normalizedCategory = category.toLowerCase();
-              const themeClassesByCategory = {
-                reaction: {
-                  bg: "bg-light-red/5",
-                  text: "text-light-red",
-                },
-                memory: {
-                  bg: "bg-orangey-yellow/5",
-                  text: "text-orangey-yellow",
-                },
-                verbal: {
-                  bg: "bg-green-teal/5",
-                  text: "text-green-teal",
-                },
-                visual: {
-                  bg: "bg-cobalt-blue/5",
-                  text: "text-cobalt-blue",
-                },
-              };
+
               const themeClasses = themeClassesByCategory[
                 normalizedCategory
               ] || {
