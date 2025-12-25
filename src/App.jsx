@@ -5,36 +5,13 @@ export default function App() {
   const { loading, error, results } = useResults();
   const COUNT_UP_DURATION = 1.3;
 
-  const summary = results.map((result) => {
-    const { category } = result;
-    let colorTheme = "";
-
-    switch (category.toLowerCase()) {
-      case "reaction":
-        colorTheme = "light-red";
-        break;
-      case "memory":
-        colorTheme = "orange-yellow";
-        break;
-      case "verbal":
-        colorTheme = "green-teal";
-        break;
-      case "visual":
-        colorTheme = "cobalt-blue";
-        break;
-      default:
-        break;
-    }
-    return {
-      ...result,
-      colorTheme,
-    };
-  });
-
-  const average = Math.floor(
-    results.reduce((total, current) => current.score + total, 0) /
-      results.length
-  );
+  const average =
+    results.length > 0
+      ? Math.floor(
+          results.reduce((total, current) => current.score + total, 0) /
+            results.length
+        )
+      : 0;
 
   if (error) return <div>A very very unexpected error occurred</div>;
 
@@ -76,16 +53,42 @@ export default function App() {
         <section className="space-y-4 bg-white flex-1 py-3 px-4 md:rounded-tr-3xl md:rounded-br-3xl md:py-5 md:px-6">
           <h1 className="font-medium md:text-xl">Summary</h1>
           <ul className="space-y-3 py-3">
-            {summary.map((result, index) => {
-              const { category, colorTheme, score, icon } = result;
+            {results.map((result, index) => {
+              const { category, score, icon } = result;
+
+              const normalizedCategory = category.toLowerCase();
+              const themeClassesByCategory = {
+                reaction: {
+                  bg: "bg-light-red/5",
+                  text: "text-light-red",
+                },
+                memory: {
+                  bg: "bg-orangey-yellow/5",
+                  text: "text-orangey-yellow",
+                },
+                verbal: {
+                  bg: "bg-green-teal/5",
+                  text: "text-green-teal",
+                },
+                visual: {
+                  bg: "bg-cobalt-blue/5",
+                  text: "text-cobalt-blue",
+                },
+              };
+              const themeClasses = themeClassesByCategory[
+                normalizedCategory
+              ] || {
+                bg: "",
+                text: "",
+              };
               return (
                 <li
-                  key={category.toLowerCase()}
-                  className={`rounded-xl p-3.5 md:p-4 justify-between flex bg-${colorTheme}/5`}
+                  key={normalizedCategory}
+                  className={`rounded-xl p-3.5 md:p-4 justify-between flex ${themeClasses.bg}`}
                 >
                   <div className="flex gap-2">
                     <img src={icon} alt="" />
-                    <span className={`font-medium text-${colorTheme}`}>
+                    <span className={`font-medium ${themeClasses.text}`}>
                       {category}
                     </span>
                   </div>

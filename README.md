@@ -38,9 +38,8 @@ Solution Built:
 
 ### Links
 
-- Solution URL: [GitHub Source Code](https://github.com/TonyFred-code/blog-preview-card/)
-<!-- TODO: add live site URL when deployed -->
-- Live Site URL: [Vercel Deployed Demo](https://example.com)
+- Solution URL: [GitHub Source Code](https://github.com/TonyFred-code/results-summary-component/)
+- Live Site URL: [Vercel Deployed Demo](https://results-summary-component-omega-neon.vercel.app/)
 
 ## Built with
 
